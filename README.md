@@ -67,5 +67,45 @@ npm run test
 
 ## Getting Started
 
+✅ 1. Clone this repo
+```bash
+git clone https://github.com/xunli253/CareLineLive_Mini_Scheduler_App.git
+cd CareLineLive_Mini_Scheduler_App
+```
 
+✅ 2. Install backend dependencies
+```bash
+cd careline-backend
+npm install
+npm start
+# API runs at http://localhost:3000
+```
 
+✅ 3. Install frontend dependencies
+```bash
+cd ../careline-frontend
+npm install
+npm run dev
+# App runs at http://localhost:5173
+```
+
+## API Endpoints (dev)
+| Method | Endpoint   | Description                            |
+| ------ | ---------- | -------------------------------------- |
+| GET    | `/carers`  | List all carers                        |
+| POST   | `/carers`  | Create a new carer                     |
+| GET    | `/clients` | List all clients                       |
+| POST   | `/clients` | Create a new client                    |
+| GET    | `/shifts`  | List shifts with pagination            |
+| POST   | `/shifts`  | Create a new shift with conflict check |
+
+## 🧑‍💻 Author Notes
+This project was built for the CareLineLive coding test with a focus on:
+
+User-friendly interface
+
+Strict time validation rules
+
+Clear API logic with readable structure
+
+Fully testable frontend components
