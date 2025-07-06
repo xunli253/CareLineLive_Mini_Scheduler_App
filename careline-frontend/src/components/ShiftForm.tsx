@@ -71,7 +71,6 @@ export default function ShiftForm({
                     }}
                     format="YYYY-MM-DD HH:mm"
                     disabledDate={(current) => {
-                        // 禁用今天之前的日期
                         return current && current < dayjs().startOf('day');
                     }}
                     disabledTime={(current) => {
@@ -81,22 +80,19 @@ export default function ShiftForm({
                         const isToday = current.isSame(now, 'day');
 
                         const disabledHours = () => {
-                            if (!isToday) return []; // 如果不是今天，允许 0–23 小时
+                            if (!isToday) return [];
 
-                            // 禁用当前时间前的小时（今天）
                             return Array.from({ length: now.hour() }, (_, i) => i);
                         };
 
                         const disabledMinutes = (selectedHour: number) => {
                             const minutes: number[] = [];
 
-                            // 分钟仅支持 10 分钟间隔
                             for (let i = 0; i < 60; i++) {
                                 if (i % 10 !== 0) minutes.push(i);
                             }
 
                             if (isToday && selectedHour === now.hour()) {
-                                // 禁用当前小时内已经过去的 10 分钟块
                                 for (let i = 0; i < now.minute(); i += 1) {
                                     if (!minutes.includes(i)) minutes.push(i);
                                 }
