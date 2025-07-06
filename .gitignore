@@ -1,0 +1,42 @@
+# Node dependencies
+node_modules/
+
+# Output folders
+dist/
+build/
+coverage/
+.vite/
+.temp/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local env config
+.env
+.env.*.local
+
+# IDE & OS
+.DS_Store
+.vscode/
+.idea/
+
+# Test snapshots & cache
+__snapshots__/
+.cache/
+jest-cache/
+vitest-*
+
+# Optional: macOS system files
+*.DS_Store
+
+# Optional: local test reports
+*.lcov
+*.log
+*.tsbuildinfo
+
+# Avoid uploading lock files if not needed
+ package-lock.json
+ yarn.lock
